@@ -8,7 +8,7 @@ int readArgs(int argc, char **argv, char ***outsrc) {
 
     /* Currently there are no special arguments, all arguments are to be treated
      * as filepaths */
-    *outsrc = realloc(*outsrc, argc);
+    *outsrc = realloc(*outsrc, argc * sizeof(char *));
     for (int i = 0; i < argc; i++) {
         *outsrc[i] = argv[i];
     }
